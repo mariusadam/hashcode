@@ -21,7 +21,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        Scanner in = new Scanner(new InputStreamReader(new FileInputStream("C:\\Users\\glinut\\Desktop\\kittens.in")));
+        Scanner in = new Scanner(new InputStreamReader(new FileInputStream("C:\\Users\\glinut\\Desktop\\trending_today.in")));
 
         Integer videosNumber = in.nextInt();
         Integer endPointNumber = in.nextInt();
@@ -66,7 +66,7 @@ public class Main {
         });
         */
         Boolean ok = false;
-        Integer cont = 100;
+        Integer cont = 1000;
         while (! ok ){
             if (cont == 0) break;
             cont --;
@@ -116,8 +116,9 @@ public class Main {
         for (Cache c: ch)
         {
             out.write(c.id + " ");
-            for (Video v:c.videos){
-                out.write(v.id + " ");
+            HashSet<Video> v = new HashSet<>(c.videos);
+            for (Video vi:v){
+                out.write(vi.id + " ");
             }
             out.write("\n");
         }

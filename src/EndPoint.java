@@ -6,7 +6,15 @@ import java.util.HashMap;
 public class EndPoint {
     Integer id;
     Integer dataCenterLatency;
-    HashMap<Cache, Integer> latencys;
+    Integer cacheNumber;
+    HashMap<Cache, Integer> latencys = new HashMap<>();
+
+
+    public EndPoint(Integer id, Integer dataCenterLatency, Integer cacheNumber) {
+        this.id = id;
+        this.dataCenterLatency = dataCenterLatency;
+        this.cacheNumber = cacheNumber;
+    }
 
     public EndPoint(Integer id, Integer dataCenterLatency) {
         this.id = id;
